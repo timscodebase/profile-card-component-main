@@ -1,0 +1,154 @@
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hwb(227 42% 49%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --light-gray: hsl(0deg 0% 92%);
+}
+
+body {
+  background-color: var(--dark-cyan);
+  font-family: 'Kumbh Sans', sans-serif;
+  color: var(--very-dark-desaturated-blue);
+
+}
+
+.container {
+  display: relative;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(60deg,
+      hsl(185, 75%, 39%) 0%,
+      rgba(255, 255, 255, 0) 80%);
+}
+
+.bg-circle-top {
+  position: absolute;
+  top: -35vw;
+  left: -20vw;
+  width: 70vw;
+  height: 70vw;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  z-index: -1;
+  transform: rotate(150deg);
+  opacity: 0.2;
+}
+
+.bg-circle-bottom {
+  position: absolute;
+  bottom: -35vw;
+  right: -18vw;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.card {
+  position: relative;
+  width: 25vw;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 80vw;
+  }
+
+  .bg-circle-top {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .bg-circle-bottom {
+    position: absolute;
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  border-bottom: 1px var(--light-gray) solid;
+}
+
+.profile_pic {
+  width: 80px;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin: -42px auto 0 auto;
+}
+
+.name {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-grayish-blue)
+}
+
+.city {
+  text-align: center;
+  font-size: 14px;
+  color: var(--dark-gray);
+  padding: 0;
+  margin: 0;
+}
+
+.bottom {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-around;
+}
+
+.bottom div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom div h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+}
+
+.bottom div p {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--dark-gray);
+}
+
+.bottom div h3,
+.bottom div p {
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+}
